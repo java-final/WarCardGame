@@ -14,6 +14,7 @@ public class Main {
             }
         }
 
+        Collections.shuffle(cardDeck, new Random());
 
     String [] playerDeck = new String [26];
     String [] compDeck = new String [26];
@@ -32,3 +33,4 @@ public class Main {
     Collections.shuffle(cardDeck, new Random());
     }
 }
+
