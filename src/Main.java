@@ -22,6 +22,10 @@ public class Main {
  System.out.println("Enter name for player 2 >> ");
  player2 = input.nextLine();
 
+ while(play != 0){
+  winner = false;
+
+ }
 
     }
 }
