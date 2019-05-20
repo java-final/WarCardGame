@@ -18,7 +18,8 @@ public class Rules {
         System.out.println("The players draw the top 3 cards and place them face down.\n");
         System.out.println("The players then draw a card from their deck and place it face up.\n");
         System.out.println("Highest card wins and the winner collects all 8 cards used in the Declare WAR.\n");
-        System.out.println("Set the cards won off to the side and continue with normal WAR.");
+        System.out.println("Set the cards won off to the side and continue with normal WAR until both decks " +
+                "run out.");
 
     }
 }
