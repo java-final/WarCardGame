@@ -1,36 +1,28 @@
 import java.util.*;
 import java.util.Collections;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+ String player1;
+ String player2;
+ String option;
+ String winnerOfRound;
+ String winnerOfGame;
+ int value;
+ int play = 1;
+ boolean winner;
 
-        List<Cards> cardDeck = new ArrayList<Cards>();
+ System.out.println("Welcome to the game War!!");
+ System.out.println("Enter name for player 1 >> ");
+ player1 = input.nextLine();
+ System.out.println("Enter name for player 2 >> ");
+ player2 = input.nextLine();
 
-        for(int i = 0; i<4; i++){ //suits
-            for(int j =0; j<15; j++){ //ranks
-                cardDeck.add(new Cards());
-            }
-        }
 
-        Collections.shuffle(cardDeck, new Random());
-
-    String [] playerDeck = new String [26];
-    String [] compDeck = new String [26];
-    int playerScore = 0;
-    int compScore= 0;
-    int playerValue = 0;
-    int compValue = 0;
-
-    for(int i =0; i <= 25; i++){
-        String card1 = playerDeck[i];
-        String card2 = compDeck[i];
-
-        System.out.println("The player drew the " + card1);
-        System.out.println("The computer drew the " + card2);
-    }
-    Collections.shuffle(cardDeck, new Random());
     }
 }
 
