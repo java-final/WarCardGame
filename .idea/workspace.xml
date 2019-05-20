@@ -20,6 +20,9 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Rules.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Rules.java">
+          <provider selected="true" editor-type-id="text-editor">
 
             </state>
           </provider>
@@ -40,6 +43,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/Cards.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
 
       </list>
@@ -206,7 +210,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DeclareWar.java">
+
       <provider selected="true" editor-type-id="text-editor">
 
         </state>
@@ -214,8 +218,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Rules.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="18" selection-end-column="18" />
+
         </state>
       </provider>
     </entry>
