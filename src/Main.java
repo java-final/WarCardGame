@@ -16,15 +16,14 @@ public class Main {
  int play = 1;
  boolean winner;
 
- System.out.println("Welcome to the game War!!");
- System.out.println("Enter name for player 1 >> ");
- player1 = input.nextLine();
- System.out.println("Enter name for player 2 >> ");
- player2 = input.nextLine();
 
  while(play != 0){
   winner = false;
-
+  System.out.println("Welcome to the game War!!");
+  System.out.println("Enter name for player 1 >> ");
+  player1 = input.nextLine();
+  System.out.println("Enter name for player 2 >> ");
+  player2 = input.nextLine();
  }
 
     }
