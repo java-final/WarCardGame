@@ -1,6 +1,5 @@
 public class Cards {
 
-
     public Cards(){
          String suit;
 //         int rank = 0;
