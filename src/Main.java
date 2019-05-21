@@ -9,8 +9,8 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
 
- String player1;
- String player2;
+ String player1 = " ";
+ String player2 = " ";
  String option;
  String winnerOfRound;
  String winnerOfGame;
@@ -43,13 +43,17 @@ if(i == 1){
  Deck1.add(Deck1.add(0));
  Deck1.remove(0);
  Deck2.remove(0);
+ winnerOfRound = player1;
 }
 else if(i == 2){
  Deck2.add(Deck1.add(0));
  Deck2.add(Deck2.add(0));
  Deck2.remove(0);
  Deck2.remove(0);
- 
+ winnerOfRound = player2;
+}
+if(i == 3){ // WAR
+ winnerOfRound = "WAR";
 }
  }
     }

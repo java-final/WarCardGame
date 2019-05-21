@@ -40,7 +40,7 @@ public Deck (){
         }
     }
     Cards card = new Cards(suit, rank);
-    Deck.add(card);
+    Deck.add(card);0
     }
     public Cards grabFromShuffledDeck(int i){
     if(!Shuffled.isEmpty()){
@@ -50,7 +50,6 @@ public Deck (){
     }
     public static void shuffle(){
         int random = (int) (Math.random() * 52);
-
     }
     public static void valueComparison(Cards cards){
     int amount;
