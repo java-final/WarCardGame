@@ -1,5 +1,6 @@
 public class Cards {
 
+
     public Cards(){
          String [] suit = {"Spades", "Hearts", "Diamonds", "Clubs"}; //the four card suits
          String value;
@@ -7,7 +8,7 @@ public class Cards {
          //gives the cards their numbers
         String random = String.valueOf((int) (Math.random() * 52)); //randomizes the cards
 
-         for(int i = 0; i<rank.length; i++){
+         for(int i = 0; i <rank.length; i++){
              if(rank[i] == random) {
                  value = rank[i];
              }
