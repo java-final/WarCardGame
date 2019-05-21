@@ -52,4 +52,15 @@ public Deck (){
         int random = (int) (Math.random() * 52);
 
     }
+    public static void valueComparison(Cards cards){
+    int amount;
+    if(value > cards.getValue()){
+        amount = 1;
+    }
+    else if(value < cards.getValue()){
+        amount = 2;
+    }
+    else
+        amount = 3;
+    }
 }
