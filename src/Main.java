@@ -55,12 +55,12 @@ public class Main {
            System.out.println("The war card from player#1 is " + warPlayer1.get(0).toString());
            System.out.println("The war card from player#2 is " + warPlayer2.get(0).toString());
           }
-          if(warPlayer1.get(2).getValueCard() > warPlayer2.get(2).getValueCard()){
+          else if (warPlayer1.get(2).getValueCard() > warPlayer2.get(2).getValueCard()){
              deck1.addAll(warPlayer1);
              deck1.addAll(warPlayer2);
              System.out.println("Player#1 wins this war round!");
           }
-          else(warPlayer2.get(2).getValueCard() > warPlayer1.get(2).getValueCard()){
+          else if(warPlayer2.get(2).getValueCard() > warPlayer1.get(2).getValueCard()){
           deck2.addAll(warPlayer2);
           deck2.addAll(warPlayer1);
             System.out.println("Player#2 wins this war round!");
