@@ -1,66 +1,61 @@
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.List;
+import java.util.LinkedList;
 
 public class Deck {
-ArrayList<Cards> Deck = new ArrayList <Cards> (52);
-ArrayList<Cards> Shuffled = new ArrayList<Cards>(52);
+    int suit; //Suits = diamonds, clubs, hearts, & spades
+    int rank; //Ranks = King, Queen, 5, 8, etc.
 
-public Deck (){
-    String suit = " ";
-    String rank = " ";
-    for(int i = 0; i < 4; i++ ){
-        if(i == 0){
-            suit = "Hearts";
-        }
-        if(i == 1){
-            suit = "Clubs";
-        }
-        if(i == 2){
-            suit = "Diamonds";
-        }
-        if(i == 3){
-            suit = "Spades";
-        }
+    public Deck(int suit, int rank) {
+        this.suit = suit;
+        this.rank = rank;
     }
-    for(int j = 1; j < 13; j++) {
-        if (j == 1) {
-            rank = "Ace";
-        }
-        if (j > 0 & j < 11) {
-            rank = " " + j;
-        }
-        if (j == 11) {
-            rank = "Jack";
-        }
-        if (j == 12) {
-            rank = "Queen";
-        }
-        if (j == 13) {
-            rank = "King";
-        }
-    }
-    Cards card = new Cards(suit, rank);
-    Deck.add(card);
-    }
-    public Cards grabFromShuffledDeck(int i){
-    if(!Shuffled.isEmpty()){
-        return Shuffled.get(i);
-    }
-        return null;
-    }
-    public static void shuffle(){
-        int random = (int) (Math.random() * 52);
 
+    public int getValueCard() {
+        return rank;
     }
-    public static void valueComparison(Cards cards){
-    int amount;
-    if(value > cards.getValue()){
-        amount = 1;
+
+    public void setValueCard(int rank) {
+        this.rank = rank;
     }
-    else if(value < cards.getValue()){
-        amount = 2;
+
+    public String toString() {
+        StringBuilder displayCardType = new StringBuilder();
+        switch (rank) {
+            case 11:
+                displayCardType.append("Jack");
+                break;
+            case 12:
+                displayCardType.append("Queen");
+                break;
+            case 13:
+                displayCardType.append("King");
+                break;
+            case 14:
+                displayCardType.append("Ace");
+                break;
+            default:
+                displayCardType.append(rank);
+                break;
+        }
+        switch(suit){
+            case 0:
+                displayCardType.append("Clubs");
+                break;
+            case 1:
+                displayCardType.append("Diamonds");
+                break;
+            case 2:
+                displayCardType.append("Hearts");
+                break;
+            case 3:
+                displayCardType.append("Spades");
+                break;
+            default:
+                System.out.println("Nothing...");
+                break;
+        }
+        return displayCardType.toString();
     }
-    else
-        amount = 3;
-    }
+
 }
