@@ -12,6 +12,7 @@ public class Deck {
     }
 
     public int getValueCard() {
+
         return rank;
     }
 
@@ -23,16 +24,16 @@ public class Deck {
         StringBuilder displayCardType = new StringBuilder();
         switch (rank) {
             case 11:
-                displayCardType.append("Jack");
+                displayCardType.append("Jack of ");
                 break;
             case 12:
-                displayCardType.append("Queen");
+                displayCardType.append("Queen of ");
                 break;
             case 13:
-                displayCardType.append("King");
+                displayCardType.append("King of ");
                 break;
             case 14:
-                displayCardType.append("Ace");
+                displayCardType.append("Ace of ");
                 break;
             default:
                 displayCardType.append(rank);
@@ -40,19 +41,19 @@ public class Deck {
         }
         switch(suit){
             case 0:
-                displayCardType.append("Clubs");
+                displayCardType.append(" Clubs");
                 break;
             case 1:
-                displayCardType.append("Diamonds");
+                displayCardType.append(" Diamonds");
                 break;
             case 2:
-                displayCardType.append("Hearts");
+                displayCardType.append(" Hearts");
                 break;
             case 3:
-                displayCardType.append("Spades");
+                displayCardType.append(" Spades");
                 break;
             default:
-                System.out.println("Nothing...");
+                System.out.println(" Nothing...");
                 break;
         }
         return displayCardType.toString();
