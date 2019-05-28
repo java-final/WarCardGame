@@ -121,7 +121,7 @@ public class Cards{
         int houseWarRank = Cards.rank(houseWarCard);
 
         System.out.println("You now play a face up card: " + playerWarCard);
-        System.out.println("Press space to see the outcome...");
+        System.out.println("Press enter to see the outcome...");
         input.nextLine();
         System.out.println("They play a face up card: " + houseWarCard);
         warCount++;
