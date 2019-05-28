@@ -1,32 +1,83 @@
-import java.util.Random;
-import java.util.Collections;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.LinkedList;
-import java.util.List;
-
 
 public class Main {
     public static void main(String[] args) {
-        int count = 0;
-        int warCount = 0;
 
         Scanner input = new Scanner(System.in);
-        String cpu1;
-        String cpu2;
+        String [] cards = {"AC", "AS", "AH", "AD", "KC", "KS", "KH", "KD", "QC", "QS", "QH", "QD", "JC", "JS", "JH",
+                "JD", "XC", "XS", "XH", "XD", "9C", "9S", "9H", "9 of Diamonds", "8C", "8S", "8H", "8D", "7C", "7S",
+                "7H", "7D", "6C", "6S", "6H", "6D", "5C", "5S", "5H", "5D", "4C", "4S", "4S", "4D",  "3C", "3S",
+                "3H", "3D", "2C", "2S", "2H", "2D"};
+        boolean play = true;
+        boolean game = true;
+        String playerCard = null;
+        String opponentCard = null;
+        int playerCardValue;
+        int opponentCardValue;
 
-        System.out.println("Enter the name for CPU #1");
-        cpu1 = input.next();
-        System.out.println("Enter the name for CPU #2");
-        cpu2 = input.next();
+        while(play == true){
+            boolean playerWinner = false;
+            boolean opponentWinner = false;
+            ArrayList<String> fullDeck = null;
+            ArrayList<String> playerDeck = new ArrayList<String>();
+            ArrayList<String> opponentDeck = new ArrayList<String>();
+            ArrayList<String> mid = new ArrayList<String>();
+            System.out.println("");
+            System.out.println("~~~~~~~~~~Welcome to the card game War~~~~~~~~~~\n");
 
-        Collections.shuffle(cardDeck, new Random());
+            fullDeck = Cards.createDeck(cards);
+            fullDeck = Cards.shuffle(fullDeck);
+            Cards.divideDeck(fullDeck, playerDeck, opponentDeck);
 
-        public static void displayWar () {
-            System.out.println("-----------------------War-----------------------");
+            while(game == true){
+                System.out.println("You have " + playerDeck.size() + " cards. The opponent has " + opponentDeck.size()
+                        + " cards. \n");
+                int warCount = 1;
+                playerCard = playerDeck.get(0);
+                opponentCard = opponentDeck.get(0);
+                playerCardValue = Cards.rank(playerCard);
+                opponentCardValue = Cards.rank(opponentCard);
+                System.out.println("Are you ready? Press enter to continue, or type (q) to quit playing.");
+                System.out.println("--------------------------------------------------------------------");
+                if(input.nextLine().equals("q")){
+                    game = false;
+                    break;
+                }
+                System.out.println("Your card is >> " + playerCard);
+                System.out.println("The opponent's card is >> " + opponentCard + " \n");
+                game = Cards.result(playerCardValue, opponentCardValue, playerDeck, opponentDeck, mid, warCount, game);
+                if(game == false){
+                    if(playerDeck.size() < 2){
+                        opponentWinner = true;
+                    }
+                    else if(opponentDeck.size() < 2){
+                        playerWinner = true;
+                    }
+                }
+                else if(playerDeck.size() <= 0){
+                    game = false;
+                }
+                else if(opponentDeck.size() <= 0){
+                    game = false;
+                }
+            }
+            System.out.println("--------------------------------------------------");
+            if(playerWinner == true){
+                System.out.println("You WIN the game!! Congratulations :)))");
+            }
+            else if(opponentWinner == true){
+                System.out.println("The opponent wins the game... Bummer :(((");
+            }
+            System.out.println("Want to play again? Press enter to continue, or (q) to quit.");
+            if(input.nextLine().equals("q")){
+                System.out.println("\n");
+                System.out.println("~~~~~~~~~~THANKS FOR PLAYING!!!~~~~~~~~~~");
+                play = false;
+            }
+
         }
-        public static void displayEndWar () {
-            System.out.println("---------------------End War---------------------");
-        }
+
     }
+
 }
