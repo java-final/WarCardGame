@@ -11,6 +11,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -47,6 +48,7 @@
           <select />
         </subPane>
       </pane>
+
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -143,10 +145,6 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+
   </component>
 </project>
