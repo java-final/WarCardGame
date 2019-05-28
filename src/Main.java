@@ -24,6 +24,7 @@ public class Main {
             ArrayList<String> opponentDeck = new ArrayList<String>();
             ArrayList<String> mid = new ArrayList<String>();
             System.out.println("");
+            Rules.displayRules();
             System.out.println("~~~~~~~~~~Welcome to the card game War~~~~~~~~~~\n");
 
             fullDeck = Cards.createDeck(cards);
