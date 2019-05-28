@@ -6,7 +6,7 @@ public class Main {
 
         Scanner input = new Scanner(System.in);
         String [] cards = {"AC", "AS", "AH", "AD", "KC", "KS", "KH", "KD", "QC", "QS", "QH", "QD", "JC", "JS", "JH",
-                "JD", "XC", "XS", "XH", "XD", "9C", "9S", "9H", "9 of Diamonds", "8C", "8S", "8H", "8D", "7C", "7S",
+                "JD", "XC", "XS", "XH", "XD", "9C", "9S", "9H", "9D", "8C", "8S", "8H", "8D", "7C", "7S",
                 "7H", "7D", "6C", "6S", "6H", "6D", "5C", "5S", "5H", "5D", "4C", "4S", "4S", "4D",  "3C", "3S",
                 "3H", "3D", "2C", "2S", "2H", "2D"};
         boolean play = true;
@@ -64,20 +64,21 @@ public class Main {
             }
             System.out.println("--------------------------------------------------");
             if(playerWinner == true){
-                System.out.println("You WIN the game!! Congratulations :)))");
+                System.out.println("You WIN the game!! Congratulations :)))\n " );
+                System.out.println("~~~~~~~~~~THANKS FOR PLAYING!!!~~~~~~~~~~");
             }
             else if(opponentWinner == true){
-                System.out.println("The opponent wins the game... Bummer :(((");
+                System.out.println("The opponent wins the game... Bummer :((( \n ");
+                System.out.println("~~~~~~~~~~THANKS FOR PLAYING!!!~~~~~~~~~~");
             }
-            System.out.println("Want to play again? Press enter to continue, or (q) to quit.");
+            System.out.println("Press (q) to quit the game. ");
             if(input.nextLine().equals("q")){
                 System.out.println("\n");
-                System.out.println("~~~~~~~~~~THANKS FOR PLAYING!!!~~~~~~~~~~");
+
                 play = false;
             }
-
         }
-
     }
-
 }
+
+
