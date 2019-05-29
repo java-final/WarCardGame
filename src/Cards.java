@@ -39,7 +39,7 @@ public class Cards{
             opponentDeck.remove(0);
         }
         if(playerCardValue > opponentCardValue){
-            Cards.playerWins(playerDeck, opponentDeck, mid, warCount);
+            Cards.playerWins(playerDeck, opponentDeck, mid, warCount, countPlayer);
             countPlayer++;
         }
         else if(opponentCardValue > playerCardValue){
@@ -65,9 +65,10 @@ public class Cards{
         return game;
     }
     public static void playerWins(ArrayList<String> playerDeck, ArrayList<String> opponentDeck,
-                                  ArrayList<String> mid, int warCount){
+                                  ArrayList<String> mid, int warCount, int countPlayer){
         if(warCount > 1){
             System.out.println("You WON the war round! So, you received >> " + mid);
+            countPlayer++;
         }
         else{
             System.out.println("You won this round!! \n");
