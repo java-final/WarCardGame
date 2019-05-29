@@ -30,8 +30,7 @@ public class Cards{
         }
     }
     public static boolean result(int playerCardValue, int opponentCardValue, ArrayList<String> playerDeck,
-                                 ArrayList<String> opponentDeck, ArrayList<String> mid, int warCount, boolean game,
-                                 int countPlayer, int countOpponent){
+                                 ArrayList<String> opponentDeck, ArrayList<String> mid, int warCount, boolean game, int playerCount, int opponentCount){
         if(warCount < 2){
             mid.add(playerDeck.get(0));
             mid.add(opponentDeck.get(0));
@@ -39,12 +38,12 @@ public class Cards{
             opponentDeck.remove(0);
         }
         if(playerCardValue > opponentCardValue){
-            Cards.playerWins(playerDeck, opponentDeck, mid, warCount, countPlayer);
-            countPlayer++;
+            Cards.playerWins(playerDeck, opponentDeck, mid, warCount, playerCount);
+
         }
         else if(opponentCardValue > playerCardValue){
-            Cards.opponentWins(playerDeck, opponentDeck, mid, warCount);
-            countOpponent++;
+            Cards.opponentWins(playerDeck, opponentDeck, mid, warCount, opponentCount);
+
         }
         else{
             if(playerDeck.size() < 2 || opponentDeck.size() < 2){
@@ -59,33 +58,36 @@ public class Cards{
                 mid.add(opponentDeck.get(0));
                 playerDeck.remove(0);
                 opponentDeck.remove(0);
-                Cards.war(playerDeck, opponentDeck, mid, warCount, game, countPlayer, countOpponent);
+                Cards.war(playerDeck, opponentDeck, mid, warCount, game, playerCount, opponentCount);
             }
         }
         return game;
     }
     public static void playerWins(ArrayList<String> playerDeck, ArrayList<String> opponentDeck,
-                                  ArrayList<String> mid, int warCount, int countPlayer){
+                                  ArrayList<String> mid, int warCount, int playerCount){
         if(warCount > 1){
             System.out.println("You WON the war round! So, you received >> " + mid);
-            countPlayer++;
         }
         else{
             System.out.println("You won this round!! \n");
-
+            while(playerCount >= 0){
+                playerCount++;
+            }
         }
         System.out.println();
         playerDeck.addAll(mid);
         mid.clear();
     }
     public static void opponentWins(ArrayList<String> playerDeck, ArrayList<String> opponentDeck,
-                                    ArrayList<String> mid, int warCount){
+                                    ArrayList<String> mid, int warCount, int opponentCount){
         if(warCount > 1){
             System.out.println("Aw... They won the war round.");
         }
         else{
             System.out.println("The opponent won the round. \n");
-
+            while(opponentCount >= 0){
+                opponentCount++;
+            }
         }
         System.out.println();
         opponentDeck.addAll(mid);
@@ -114,10 +116,10 @@ public class Cards{
         return rank;
     }
     public static void war(ArrayList<String> playerDeck, ArrayList<String> opponentDeck, ArrayList<String> mid,
-                           int warCount, boolean game, int countPlayer, int countOpponent){//addresses decks when there is a war
+                           int warCount, boolean game,int playerCount,int opponentCount){//addresses decks when there is a war
         Scanner input = new Scanner(System.in);
         System.out.println("~~~~~~~~~~~~~~~~~~~~ENTERING WAR~~~~~~~~~~~~~~~~~~~~");
-        System.out.println("You each place a facedown card");
+        System.out.println("You each place a face down card");
         System.out.println();
 
         String playerWarCard=mid.get(mid.size()-2);
@@ -130,6 +132,6 @@ public class Cards{
         input.nextLine();
         System.out.println("They play a face up card: " + houseWarCard);
         warCount++;
-        Cards.result(playerWarRank, houseWarRank, playerDeck, opponentDeck, mid, warCount, game, countPlayer, countOpponent);
+        Cards.result(playerWarRank, houseWarRank, playerDeck, opponentDeck, mid, warCount, game, playerCount, opponentCount);
     }
 }

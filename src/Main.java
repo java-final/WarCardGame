@@ -15,8 +15,6 @@ public class Main {
         String opponentCard = null;
         int playerCardValue;
         int opponentCardValue;
-        int playerCount = 0;
-        int opponentCount = 0;
 
         while(play == true){
             boolean playerWinner = false;
@@ -33,6 +31,8 @@ public class Main {
             fullDeck = Cards.shuffle(fullDeck);
             Cards.divideDeck(fullDeck, playerDeck, opponentDeck);
 
+            int playerCount = 0;
+            int opponentCount = 0;
             while(game == true){
                 System.out.println("You have " + playerDeck.size() + " cards. The opponent has " + opponentDeck.size()
                         + " cards. \n");
@@ -44,14 +44,13 @@ public class Main {
                 System.out.println("Are you ready? Press enter to continue, or type (q) to quit playing.");
                 System.out.println("--------------------------------------------------------------------");
                 if(input.nextLine().equals("q")){
-                    System.out.println("Player won " + playerCount + " times.");
-                    System.out.println("Opponent won " + opponentCount + " times.");
                     game = false;
                     break;
                 }
                 System.out.println("Your card is >> " + playerCard);
                 System.out.println("The opponent's card is >> " + opponentCard + " \n");
-                game = Cards.result(playerCardValue, opponentCardValue, playerDeck, opponentDeck, mid, warCount, game, playerCount, opponentCount);
+                game = Cards.result(playerCardValue, opponentCardValue, playerDeck, opponentDeck, mid, warCount,
+                        game, playerCount, opponentCount);
                 if(game == false){
                     if(playerDeck.size() < 2){
                         opponentWinner = true;
@@ -71,20 +70,17 @@ public class Main {
             if(playerWinner == true){
                 System.out.println("You WIN the game!! Congratulations :)))\n " );
                 System.out.println("~~~~~~~~~~THANKS FOR PLAYING!!!~~~~~~~~~~");
-                System.out.println("Player won " + playerCount + " times.");
-                System.out.println("Opponent won " + opponentCount + " times.");
             }
             else if(opponentWinner == true){
                 System.out.println("The opponent wins the game... Bummer :((( \n ");
                 System.out.println("~~~~~~~~~~THANKS FOR PLAYING!!!~~~~~~~~~~");
-                System.out.println("Player won " + playerCount + " times.");
-                System.out.println("Opponent won " + opponentCount + " times.");
             }
             System.out.println("Press (q) to quit the game. ");
             if(input.nextLine().equals("q")){
                 System.out.println("\n");
-
                 play = false;
+                System.out.println("Player won " + playerCount + " rounds.");
+                System.out.println("Opponent won " + opponentCount + " rounds.");
             }
         }
     }
