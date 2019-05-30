@@ -51,6 +51,12 @@ public class Main {
                 System.out.println("The opponent's card is >> " + opponentCard + " \n");
                 game = Cards.result(playerCardValue, opponentCardValue, playerDeck, opponentDeck, mid, warCount,
                         game, playerCount, opponentCount);
+                if(playerCardValue > opponentCardValue){
+                    playerCount++;
+                }
+                else if(playerCardValue < opponentCardValue){
+                    opponentCount++;
+                }
                 if(game == false){
                     if(playerDeck.size() < 2){
                         opponentWinner = true;
@@ -81,6 +87,7 @@ public class Main {
                 play = false;
                 System.out.println("Player won " + playerCount + " rounds.");
                 System.out.println("Opponent won " + opponentCount + " rounds.");
+                System.out.println("Thanks for playing!");
             }
         }
     }

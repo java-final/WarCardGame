@@ -70,9 +70,6 @@ public class Cards{
         }
         else{
             System.out.println("You won this round!! \n");
-            while(playerCount >= 0){
-                playerCount++;
-            }
         }
         System.out.println();
         playerDeck.addAll(mid);
@@ -85,9 +82,7 @@ public class Cards{
         }
         else{
             System.out.println("The opponent won the round. \n");
-            while(opponentCount >= 0){
-                opponentCount++;
-            }
+
         }
         System.out.println();
         opponentDeck.addAll(mid);
